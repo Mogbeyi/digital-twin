@@ -94,6 +94,9 @@ resource "aws_apprunner_service" "api" {
     # needs to access other AWS services (like S3, DynamoDB, etc.)
   }
   
+  # Connect to our cost-optimized auto-scaling configuration
+  auto_scaling_configuration_arn = aws_apprunner_auto_scaling_configuration_version.cost_optimized.arn
+  
   # LEARNING: health_check_configuration tells App Runner how to know if your app is healthy
   health_check_configuration {
     protocol            = "HTTP"
@@ -110,3 +113,32 @@ resource "aws_apprunner_service" "api" {
     ManagedBy   = "terraform"
   }
 }
+
+# -----------------------------------------------------------------------------
+# Auto Scaling Configuration - CRITICAL FOR COST OPTIMIZATION
+# LEARNING: This controls how App Runner scales your service
+# -----------------------------------------------------------------------------
+resource "aws_apprunner_auto_scaling_configuration_version" "cost_optimized" {
+  auto_scaling_configuration_name = "${var.project_name}-scaling"
+  
+  # LEARNING: min_size = 1 keeps one instance always running
+  # Note: AWS App Runner requires min_size >= 1
+  # With 0.25 vCPU this costs ~$5/month but avoids cold starts
+  min_size = 1
+  
+  # LEARNING: max_size limits how much you can scale up
+  # This prevents surprise bills during traffic spikes
+  max_size = 3
+  
+  # LEARNING: max_concurrency = requests per instance before scaling up
+  # Lower = more responsive scaling, higher = more efficient
+  # For chatbots with long requests, 50 is a good balance
+  max_concurrency = 50
+  
+  tags = {
+    Project     = var.project_name
+    Environment = var.environment
+    ManagedBy   = "terraform"
+  }
+}
+

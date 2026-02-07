@@ -29,3 +29,10 @@ variable "groq_base_url" {
   type        = string
   default     = "https://api.x.ai/v1"
 }
+
+variable "alert_email" {
+  description = "Email address for CloudWatch alerts (optional)"
+  type        = string
+  default     = ""
+}
+

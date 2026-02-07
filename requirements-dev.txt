@@ -1,0 +1,5 @@
+# Development dependencies (includes everything from requirements.txt)
+-r requirements.txt
+
+# Gradio for local development UI
+gradio
