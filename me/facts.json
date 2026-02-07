@@ -1,0 +1,26 @@
+{
+  "full_name": "Emmanuel Mogbeyi Wenyinmi",
+  "name": "Emmy",
+  "current_role": "Senior Software Engineer",
+  "location": "Lagos, Nigeria",
+  "email": "emmywonder6@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/mogbeyi-emmanuel-b56165131/",
+  "twitter": "https://x.com/MogbeyiWenyinmi",
+  "github": "https://github.com/Mogbeyi",
+  "specialties": ["Backend Engineering", "AI Engineering", "Cloud Engineering"],
+  "years_experience": 6,
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "University of Ibadan",
+      "year": "2019"
+    }
+  ],
+  "hobbies": [
+    "Playing chess",
+    "Swimming",
+    "Reading books",
+    "Seeing movies",
+    "Watching football and tennis"
+  ]
+}
