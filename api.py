@@ -100,11 +100,19 @@ class Me:
         yield "data: [DONE]\n\n"
 
 
-me = Me()
+# Lazy initialization - only create when needed, not at module load
+_me_instance = None
+
+def get_me():
+    global _me_instance
+    if _me_instance is None:
+        _me_instance = Me()
+    return _me_instance
 
 
 @app.post("/api/chat")
 async def chat(request: ChatRequest):
+    me = get_me()
     return StreamingResponse(
         me.stream_chat(request.message, [m.model_dump() for m in request.history]),
         media_type="text/event-stream",
@@ -117,4 +125,5 @@ async def chat(request: ChatRequest):
 
 @app.get("/api/health")
 async def health():
-    return {"status": "ok", "name": me.nickname}
+    return {"status": "ok"}
+

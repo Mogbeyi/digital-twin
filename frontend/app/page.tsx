@@ -130,7 +130,7 @@ export default function Home() {
     <main className="page">
       <header className="header">
         <div className="header-content">
-          <div className="avatar">E</div>
+          <img src="/avatar.png" alt="Emmy" className="avatar" />
           <div className="header-info">
             <h1>Emmy</h1>
             <p>AI Digital Twin • Senior Software Engineer</p>
@@ -141,7 +141,7 @@ export default function Home() {
       <div className="chat-container" ref={chatContainerRef}>
         {messages.length === 0 ? (
           <div className="welcome">
-            <div className="welcome-avatar">E</div>
+            <img src="/avatar.png" alt="Emmy" className="welcome-avatar" />
             <h2>Hey, I'm Emmy</h2>
             <p>
               Ask me anything about my career, skills, projects, or background.

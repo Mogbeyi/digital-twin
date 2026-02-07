@@ -65,3 +65,10 @@ dmypy.json
 *.bak
 *.tmp
 .cache/
+
+# Terraform
+*.tfvars
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
