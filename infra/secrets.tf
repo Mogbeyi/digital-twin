@@ -35,8 +35,8 @@ resource "aws_secretsmanager_secret_version" "api_keys" {
   # LEARNING: These are placeholder values - you'll update them after creation
   # In production, you'd use terraform.tfvars or environment variables
   secret_string = jsonencode({
-    GROQ_API_KEY  = "placeholder-update-after-creation"
-    GROQ_BASE_URL = "https://api.groq.com/openai/v1"
+    GROK_API_KEY  = "placeholder-update-after-creation"
+    GROK_BASE_URL = "https://api.x.ai/v1"
   })
   
   # LEARNING: lifecycle ignore_changes prevents Terraform from overwriting

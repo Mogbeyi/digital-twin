@@ -16,8 +16,8 @@ class Me:
         self.style = self.load_style()
         self.linkedin = self.load_linkedin_text("me/Wenyinmi.pdf")
         self.openai = OpenAI(
-            api_key=os.getenv("GROQ_API_KEY"),
-            base_url=os.getenv("GROQ_BASE_URL"),
+            api_key=os.getenv("GROK_API_KEY"),
+            base_url=os.getenv("GROK_BASE_URL"),
         )
 
     def load_facts(self):
@@ -74,7 +74,7 @@ class Me:
         ]
 
         stream = self.openai.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="grok-4-1-fast",
             messages=messages,
             stream=True,
         )
@@ -89,7 +89,7 @@ class Me:
         # Fallback: if nothing was streamed (some providers send empty deltas), do a non-streaming call.
         if not full_response:
             fallback = self.openai.chat.completions.create(
-                model="llama-3.3-70b-versatile",
+                model="grok-4-1-fast",
                 messages=messages,
                 stream=False,
             )

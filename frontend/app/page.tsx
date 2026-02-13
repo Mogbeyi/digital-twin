@@ -133,7 +133,8 @@ export default function Home() {
           <img src="/avatar.png" alt="Emmy" className="avatar" />
           <div className="header-info">
             <h1>Emmy</h1>
-            <p>AI Digital Twin • Senior Software Engineer</p>
+            <p>Forward Deployed AI Engineer</p>
+            <span className="badge">AI Digital Twin</span>
           </div>
         </div>
       </header>

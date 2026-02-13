@@ -11,7 +11,7 @@ An AI-powered digital twin that answers questions about me using LLMs.
 
 ```
 ┌─────────────┐      ┌─────────────┐      ┌─────────────┐
-│  CloudFront │ ──── │   Next.js   │      │    Groq     │
+│  CloudFront │ ──── │   Next.js   │      │    Grok     │
 │    (CDN)    │      │  (S3 SSG)   │      │    (LLM)    │
 └─────────────┘      └─────────────┘      └─────────────┘
                             │                    ▲
@@ -37,7 +37,7 @@ An AI-powered digital twin that answers questions about me using LLMs.
 pip install -r requirements.txt
 
 # Set environment variables
-cp .env.example .env  # Edit with your GROQ_API_KEY
+cp .env.example .env  # Edit with your GROK_API_KEY
 
 # Run API
 uvicorn api:app --reload
@@ -85,5 +85,5 @@ CI/CD is handled by GitHub Actions - push to `main` to deploy.
 
 | Variable        | Description                                 |
 | --------------- | ------------------------------------------- |
-| `GROQ_API_KEY`  | API key for Groq/xAI                        |
-| `GROQ_BASE_URL` | API base URL (default: https://api.x.ai/v1) |
+| `GROK_API_KEY`  | API key for Grok/xAI                        |
+| `GROK_BASE_URL` | API base URL (default: https://api.x.ai/v1) |

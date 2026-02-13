@@ -74,7 +74,7 @@ output "next_steps" {
     2. Update secrets in AWS Console:
        Go to: https://console.aws.amazon.com/secretsmanager/
        Find: ${var.project_name}/api-keys
-       Update with your real GROQ_API_KEY
+       Update with your real GROK_API_KEY
     
     3. Deploy frontend:
        cd frontend && npm run build

@@ -18,14 +18,14 @@ variable "environment" {
   default     = "prod"
 }
 
-variable "groq_api_key" {
-  description = "Groq API key for the LLM"
+variable "grok_api_key" {
+  description = "Grok API key for the LLM"
   type        = string
   sensitive   = true
 }
 
-variable "groq_base_url" {
-  description = "Groq API base URL"
+variable "grok_base_url" {
+  description = "Grok API base URL"
   type        = string
   default     = "https://api.x.ai/v1"
 }

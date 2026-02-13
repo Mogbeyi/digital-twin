@@ -69,8 +69,8 @@ resource "aws_apprunner_service" "api" {
         # runtime_environment_secrets instead of plain environment variables
         runtime_environment_variables = {
           ENVIRONMENT   = var.environment
-          GROQ_API_KEY  = var.groq_api_key
-          GROQ_BASE_URL = var.groq_base_url
+          GROK_API_KEY  = var.grok_api_key
+          GROK_BASE_URL = var.grok_base_url
         }
       }
     }

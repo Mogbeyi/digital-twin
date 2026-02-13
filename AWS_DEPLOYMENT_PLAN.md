@@ -122,8 +122,8 @@ Create `infra/` directory with:
 4. **GitHub repo** with the following secrets:
    - `AWS_ACCESS_KEY_ID`
    - `AWS_SECRET_ACCESS_KEY`
-   - `GROQ_API_KEY`
-   - `GROQ_BASE_URL`
+   - `GROK_API_KEY`
+   - `GROK_BASE_URL`
 
 ---
 
