@@ -93,9 +93,13 @@ class Me:
             stream=True,
         )
 
-        for chunk in stream:
-            if chunk.choices[0].delta.content:
-                yield f"data: {json.dumps({'content': chunk.choices[0].delta.content})}\n\n"
+        try:
+            for chunk in stream:
+                if chunk.choices[0].delta.content:
+                    yield f"data: {json.dumps({'content': chunk.choices[0].delta.content})}\n\n"
+        except Exception as e:
+            print(f"Error during streaming: {e}")
+            yield f"data: {json.dumps({'content': f'[ERROR] {str(e)}'})}\n\n"
 
         yield "data: [DONE]\n\n"
 
